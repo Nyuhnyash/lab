@@ -1,4 +1,4 @@
-/* Дата: 18.10.2018 Время: 22:48 */
+// Дата: 18.10.2018 Время: 22:48
 using System;
 
 namespace bilet
@@ -23,7 +23,6 @@ namespace bilet
                 Console.WriteLine("Да");
             else
                 Console.WriteLine("Нет");
-			Console.Write("Press any key to continue . . . ");
 			Console.ReadKey(true);
 		}
 	}
