@@ -1,4 +1,4 @@
-/* Дата: 19.10.2018 Время: 19:33 */
+// Дата: 19.10.2018 Время: 19:33
 using System;
 
 namespace perevod
@@ -27,7 +27,6 @@ namespace perevod
 			}
 			Console.WriteLine("Результат: " + res);
 			Console.ReadKey(true);
-			Console.Write("Press any key to continue . . . ");
 		}
 	}
 }
