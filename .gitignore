@@ -1,0 +1,6 @@
+# Игнорирование всех файлов
+*.*
+# Кроме
+!.gitignore
+!README.md
+!Program.cs
