@@ -15,7 +15,7 @@ namespace ex1
             Console.Write("b=");
             int b = int.Parse(Console.ReadLine());
             if (a < b)
-                Console.WriteLine(b + " " + b);
+                Console.WriteLine(a + " " + b);
             else
                 Console.WriteLine(b + " " + a);
         }
