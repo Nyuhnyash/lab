@@ -1,28 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ex2
+namespace ex2 // max из 3-х
 {
     class Program
     {
         static void Main(string[] args)
         {
             int a, b, c,max;
-            Console.Write("a=");
+            Console.Write("1-е число: ");
             a = int.Parse(Console.ReadLine());
-            Console.Write("b=");
+            Console.Write("2-е  число: ");
             b = int.Parse(Console.ReadLine());
-            Console.Write("c=");
+            Console.Write("3-е  число: ");
             c = int.Parse(Console.ReadLine());
             max = a;
             if (b > max)
                 max = b;
             if (c > max)
                 max = c;
-            Console.WriteLine(max);
+            Console.WriteLine("Наибольшее число: "+max);
         }
     }
 }

@@ -1,26 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ex4
+namespace ex4 // 3 числа, если отриц. то ^2 => если >20 то *2
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            int a;
-            for (int i = 1; i <= 3; i++)
-            {
-                Console.Write(i + " число: ");
-                a = int.Parse(Console.ReadLine());
-                if (a < 0)
-                    a *= a;
-                    if (a> 20)
-                        a *= 2;
-                Console.WriteLine(a);
-            }
-        }
-    }
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			int a;
+			for (char i = 'a'; i != 'd'; i++) 
+			{
+				Console.Write(i + "=");
+				a = int.Parse(Console.ReadLine());
+				if (a < 0) 
+				{
+					a *= a;
+					if (a > 20)
+						a *= 2;
+				}
+				Console.WriteLine(i + "'=" + a);
+			}
+		}
+	}
 }

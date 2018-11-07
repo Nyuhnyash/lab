@@ -1,19 +1,22 @@
-﻿// Дата: 03.11.2018 Время: 18:49
-using System;
+﻿using System;
 
-namespace ex9
+namespace ex9 // упорядочены ли a,b,c по возрастанию?
 {
 	class Program
 	{
 		public static void Main(string[] args)
 		{
-			int a = int.Parse(Console.ReadLine()),
-				b = int.Parse(Console.ReadLine()),
-				c = int.Parse(Console.ReadLine());
+			int a,b,c;
+			Console.Write("a=");
+			a = int.Parse(Console.ReadLine());
+			Console.Write("b=");
+			b = int.Parse(Console.ReadLine());
+			Console.Write("c=");
+			c = int.Parse(Console.ReadLine());
 			if ((a <= b) && (b <= c))
 				Console.WriteLine("Упорядочены");
 			else
-				Console.WriteLine("Не упорядочены");
-		}
+				Console.WriteLine("Не упорядочены");	
+		}	
 	}
 }
