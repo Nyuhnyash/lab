@@ -17,14 +17,30 @@ namespace Sorting
             Data = new List<int>();
             this.Length = length;
         }
-        List<int> data, dataBubble;
+        static List<int> data;
         int length;
 
         public List<int> Data { get => data; set => data = value; }
-        public List<int> DataBubble { get => dataBubble; set => dataBubble = value; }
         public int Length { get => length; set => length = value; }
 
-        public List<int> Bubble() =>  Bubble(data);
+        public List<int> Sort(int i)
+        {
+            List<int> data = new List<int>();
+            data.AddRange(Data);
+            switch (i)
+            {
+                case 0:
+                    return Bubble(data);
+                case 1:
+                    return Selection(data);
+                case 2:
+                    return Insertion(data);
+                case 3:
+                    return Radix(data);
+                default:
+                    return null;
+            }
+        }
         public List<int> Bubble(List<int> data)
         {
             int temp;
@@ -42,7 +58,6 @@ namespace Sorting
             }
             return data;
         }
-        public List<int> Selection() => Selection(data);
         public List<int> Selection(List<int> data)
         {
             for (int i = 0; i < data.Count - 1; i++)
@@ -61,7 +76,6 @@ namespace Sorting
             }
             return data;
         }
-        public List<int> Insertion() => Insertion(data);
         public List<int> Insertion(List<int> data)
         {
             for (int i = 1; i < data.Count; i++)
@@ -77,10 +91,31 @@ namespace Sorting
             }
             return data;
         }
-        public List<int> Radix() => Radix(data);
         public List<int> Radix(List<int> data)
         {
-            return null;
+            IList<IList<int>> digits = new List<IList<int>>();
+            int maxLength = 1;
+            for (int i = 0; i < maxLength; i++)
+            {
+                for (int j = 0; j < data.Count; j++)
+                {
+                    int digit = (int)((data[j] % Math.Pow(10, i + 1)) / Math.Pow(10, i));
+
+                    digits[digit].Add(data[j]);
+                }
+
+                int index = 0;
+                for (int k = 0; k < digits.Count; k++)
+                {
+                    IList<int> selDigit = digits[k];
+
+                    for (int l = 0; l < selDigit.Count; l++)
+                    {
+                        data[index++] = selDigit[l];
+                    }
+                }
+            }
+            return data;
         }
 
         public void Random()

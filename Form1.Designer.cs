@@ -29,13 +29,10 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column0 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -112,6 +109,11 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(318, 12);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.numericUpDown1.Minimum = new decimal(new int[] {
             1,
             0,
@@ -121,32 +123,30 @@
             this.numericUpDown1.Size = new System.Drawing.Size(40, 20);
             this.numericUpDown1.TabIndex = 3;
             this.numericUpDown1.Value = new decimal(new int[] {
-            10,
+            100,
             0,
             0,
             0});
             // 
             // ch
             // 
+            chartArea1.AxisY.Title = "Время, мс";
             chartArea1.Name = "ChartArea1";
             this.ch.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.ch.Legends.Add(legend1);
             this.ch.Location = new System.Drawing.Point(364, 12);
             this.ch.Name = "ch";
             series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
             series1.Name = "1 - Пузырьком";
-            series1.Points.Add(dataPoint1);
+            series1.ToolTip = "Сортировка пузырьком";
             series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
             series2.Name = "2 - Выбором";
+            series2.ToolTip = "Сортировка выбором";
             series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
             series3.Name = "3 - Вставками";
+            series3.ToolTip = "Сортировка вставками";
             series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
             series4.Name = "4 - Поразрядная";
+            series4.ToolTip = "Поразрядная сортировка";
             this.ch.Series.Add(series1);
             this.ch.Series.Add(series2);
             this.ch.Series.Add(series3);
@@ -154,14 +154,13 @@
             this.ch.Size = new System.Drawing.Size(300, 300);
             this.ch.TabIndex = 4;
             this.ch.Text = "chart1";
-            title1.Name = "Пузырь";
-            this.ch.Titles.Add(title1);
+            this.ch.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 326);
+            this.ClientSize = new System.Drawing.Size(366, 326);
             this.Controls.Add(this.ch);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.button1);
