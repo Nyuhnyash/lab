@@ -36,7 +36,7 @@ namespace Sorting
                 case 2:
                     return Insertion(data);
                 case 3:
-                    return Radix(data);
+                    return Bubble(data);
                 default:
                     return null;
             }
@@ -118,8 +118,9 @@ namespace Sorting
             return data;
         }
 
-        public void Random()
+        public void Generate()
         {
+            Data = new List<int>();
             Random rand = new Random();
             for (int i = 0; i < Length; i++)
             {
