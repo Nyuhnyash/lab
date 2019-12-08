@@ -25,6 +25,7 @@ namespace colorballs
 		}
 		void ButtonMouseDown(object sender, MouseEventArgs e)
 		{
+			if (sender is Button)
 			Board.chosenColor = (sender as Button).BackColor;
 		}
 		void Button5Click(object sender, EventArgs e)
