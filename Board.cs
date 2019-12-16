@@ -32,25 +32,54 @@ namespace soliter
 						if (temp.busy)
 						{
 							temp.busy = first.busy = false;
-						c.busy = true;
-						temp.Draw();
-						c.Draw();
-						first.Draw();
-						first = null;
-						count++;
+							c.busy = true;
+							temp.Draw();
+							c.Draw();
+							first.Draw();
+							first = null;
+							count++;
 						}
 					}
 				}
 			}
 			catch (IndexOutOfRangeException) {}	
 			catch (NullReferenceException) {}
-			if (count == 7)
+			if (count > 4)
+				if (count==7)
 			{
 				MessageBox.Show("Задача решена");
 				NewGame();
-				count=0;
 			}
-		}
+			else
+			{
+				for (int i = 0; i < cells.GetLength(0); i++) {
+					for (int j = 0; j < cells.GetLength(1); j++) {
+						if (cells[i,j]!= null)
+						{
+							Cell f = cells[i,j];
+						if (f.busy)
+						for (int ic = -1; ic < 1; ic++) {
+							for (int jc = -1; jc < 1; jc++) {
+								try {
+										Cell c = cells[i+2*ic,j+2*ic],
+											temp = cells[i+ic,j+jc];
+										if (!c.busy && temp.busy)
+												return;
+										}
+							
+							catch (IndexOutOfRangeException) {}	
+						catch (NullReferenceException) {}
+								}
+						}
+					}
+					}
+						}
+						MessageBox.Show("Конец игры");
+				NewGame();
+							
+			}
+				}
+		
 		public static void Draw()
 		{
 			for (int j = 2; j < 5; j++)
@@ -68,6 +97,7 @@ namespace soliter
 		}
 		public static void NewGame()
 		{
+			count=0;
 			for (int j = 2; j < 5; j++)
 			{
 				for (int i = 0; i < 2; i++)
