@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AD129245-36C1-42E1-8AE1-67528F5F9E1E}</ProjectGuid>
+    <ProjectGuid>{4F673EFD-B530-4F52-8917-D6012F264DA6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>opengl</RootNamespace>
     <AssemblyName>opengl</AssemblyName>
@@ -47,6 +47,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>

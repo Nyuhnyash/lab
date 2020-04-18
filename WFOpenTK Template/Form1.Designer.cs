@@ -54,7 +54,6 @@
             this.Name = "Form1";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "Form1";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.ResumeLayout(false);
 
         }
