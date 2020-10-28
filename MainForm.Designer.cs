@@ -1,4 +1,4 @@
-﻿namespace soliter
+﻿namespace swamp
 {
 	partial class MainForm
 	{
@@ -46,7 +46,6 @@
 			this.panel.Size = new System.Drawing.Size(400, 400);
 			this.panel.TabIndex = 0;
 			this.panel.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelPaint);
-			this.panel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelMouseDown);
 			// 
 			// menuStrip1
 			// 
@@ -85,12 +84,12 @@
 			this.MainMenuStrip = this.menuStrip1;
 			this.Name = "MainForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "soliter";
+			this.Text = "Лягушка на болоте";
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
-
+			this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.MainFormPreviewKeyDown);
 		}
 	}
 }

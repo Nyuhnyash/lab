@@ -1,116 +1,86 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
-namespace soliter
+namespace swamp
 {
 	public static class Board
 	{
-		static Cell[,] cells;
-		public static int p, count;
-		public static Cell first;
+		static readonly Cell[,] cells;
+		static Cell busyCell;
 		static Board()
 		{
-			cells = new Cell[7,7];
-			p = 55;
-			count = 0;
+			cells = new Cell[6,6];
+			Cell.p = 55;
 		}
-        public static void OnClickReaction(Point pt)
+        public static void Reaction(Keys key)
         {
-            try
-            {
-                Cell c = cells[pt.X / p, pt.Y / p];
-                if (c.busy)
-                    first = c;
-                else if (first != null)
-                {
-                    int m1 = Math.Abs(first.np - c.np),
-                    m2 = Math.Abs(first.ns - c.ns);
-                    if ((m1 == 0 || m1 == 2) && (m2 == 0 || m2 == 2))
-                    {
-                        Cell temp = cells[first.ns + Math.Sign(c.ns - first.ns), first.np + Math.Sign(c.np - first.np)];
-                        if (temp.busy)
-                        {
-                            temp.busy = first.busy = false;
-                            c.busy = true;
-                            temp.Draw();
-                            c.Draw();
-                            first.Draw();
-                            first = null;
-                            count++;
-                        }
-                    }
-                }
-            }
-            //catch (IndexOutOfRangeException) { }
-            //catch (NullReferenceException) { }
-            if (count > 4)
-                if (count == 7)
-                {
-                    MessageBox.Show("Задача решена");
-                    NewGame();
-                }
-                else
-                {
-                    for (int i = 0; i < cells.GetLength(0); i++){
-                        for (int j = 0; j < cells.GetLength(1); j++){
-                            if (cells[i, j] != null)
-                            {
-                                Cell f = cells[i, j];
-                                if (f.busy)
-                                    for (int ic = -1; ic <= 1; ic++) {
-                                        for (int jc = -1; jc <= 1; jc++) {
-                                            try
-                                            {
-                                                Cell c = cells[i + 2 * ic, j + 2 * jc],
-                                                    temp = cells[i + ic, j + jc];
-                                                if (!c.busy && temp.busy)
-                                                    return;
-                                            }
+	        var dx = 0; 
+	        var dy = 0;
+	        switch (key)
+	        {
+		        case Keys.Up: dy = -1; break;
+		        case Keys.Down: dy = 1; break;
+		        case Keys.Right: dx = 1; break;
+		        case Keys.Left: dx = -1; break;
+	        }
+			
+	        var x = busyCell.ns + dx * busyCell.jumpLen;
+	        var y = busyCell.np + dy * busyCell.jumpLen;
+	        if (   0 <= x && x < cells.GetLength(0) 
+	            && 0 <= y && y < cells.GetLength(1) 
+	            && cells[x, y].jumpLen != 0)
+	        {
+		        if (cells[x, y].jumpLen == -1)
+		        {
+			        MessageBox.Show("Вы прошли игру.");
+			        NewGame();
+			        return;
+		        }
 
-                                            catch (IndexOutOfRangeException) { }
-                                            catch (NullReferenceException) { }
-                                        }
-                                    }
-                            }
-                        }
-                    }
-                    MessageBox.Show("Конец игры");
-                    NewGame();
-                }
+		        busyCell.busy = false;
+		        busyCell.Draw();
+		        busyCell = cells[x, y];
+		        busyCell.busy = true;
+		        busyCell.Draw();
+	        }
+           
         }
 
         public static void Draw()
 		{
-			for (int j = 2; j < 5; j++)
-			{
-				for (int i = 0; i < 2; i++)
-				{
-					cells[i, j].Draw();
-					cells[j, i].Draw();
-					cells[6 - i, 6 - j].Draw();
-					cells[6 - j, 6 - i].Draw();
-				}
-				for (int i = 2; i < 5; i++)
-					cells[i, j].Draw();
-			}
+			foreach (var cell in cells)
+				cell.Draw();
 		}
 		public static void NewGame()
 		{
-			count=0;
-			for (int j = 2; j < 5; j++)
+			for (var j = 0; j < cells.GetLength(0); j++)
 			{
-				for (int i = 0; i < 2; i++)
-				{
-					cells[i, j] = new Cell(i, j, false);
-					cells[j, i] = new Cell(j, i, false);
-					cells[6 - i, 6 - j] = new Cell(6 - i, 6 - j, false);
-					cells[6 - j, 6 - i] = new Cell(6 - j, 6 - i, false);
-				}
-				for (int i = 2; i < 5; i++)
-					cells[i, j] = new Cell(i, j, true);
+				for (var i = 0; i < cells.GetLength(1); i++)
+					cells[i, j] = new Cell(i, j);
 			}
-			cells[3, 3].busy = false;
+			cells[0, 0].jumpLen = 2;
+			cells[2, 0].jumpLen = 2;
+			cells[4, 0].jumpLen = 3;
+			cells[5, 0].jumpLen = -1; // Финишная точка
+			
+			cells[1, 1].jumpLen = 2;
+			cells[3, 1].jumpLen = 2;
+			cells[5, 1].jumpLen = 1;
+			
+			cells[0, 2].jumpLen = 4;
+			cells[4, 2].jumpLen = 2;
+			
+			cells[1, 3].jumpLen = 2;
+			cells[2, 3].jumpLen = 3;
+			cells[3, 3].jumpLen = 1;
+			cells[5, 3].jumpLen = 1;
+			
+			cells[1, 4].jumpLen = 3;
+			cells[4, 4].jumpLen = 3;
+			
+			busyCell = cells[0, 5]= new Cell(0,5 ,3 , true);
+			cells[3, 5].jumpLen = 2;
+			cells[5, 5].jumpLen = 2;
+			
 			Draw();
 		}
 	}

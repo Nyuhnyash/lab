@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
-namespace soliter
+namespace swamp
 {
 	public partial class MainForm : Form
 	{
@@ -18,9 +19,13 @@ namespace soliter
 		{
 			Board.Draw();
 		}
-		void PanelMouseDown(object sender, MouseEventArgs e)
+
+		private static readonly Keys[] Arrows = {Keys.Up, Keys.Down, Keys.Right, Keys.Left};
+
+		private void MainFormPreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
 		{
-			Board.OnClickReaction(e.Location);
+			if (Arrows.Contains(e.KeyCode))
+				Board.Reaction(e.KeyCode);
 		}
 		void НоваяИграToolStripMenuItemClick(object sender, EventArgs e)
 		{
@@ -28,7 +33,7 @@ namespace soliter
 		}
 		void ОПрограммеToolStripMenuItemClick(object sender, EventArgs e)
 		{
-	
+			MessageBox.Show("Разработчик - Григорий Колодешников.");
 		}
 	}
 }
