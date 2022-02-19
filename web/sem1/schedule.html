@@ -1,0 +1,346 @@
+<table class="schedule ng-scope" id="entriestable" ng-if="result">
+            <colgroup><col class="schedule__time-col">
+            <col class="schedule__group-col">
+            </colgroup><tbody>
+                <!-- ngRepeat: (wdkey,wdvalue) in result.wd --><tr ng-repeat-start="(wdkey,wdvalue) in result.wd" class="schedule__day-header ng-scope">
+                    <td></td>
+                    <td>
+                        <div class="schedule__horizontal-date">
+                            <b class="ng-binding">Понедельник</b>
+                        </div>
+                    </td>
+                </tr>
+                <!-- ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><tr ng-repeat-end="" ng-repeat-start="(atkey,atvalue) in wdvalue.at" class="schedule__day-body ng-scope" ng-if="atvalue.Cells.length">
+                    <td>
+                        <span class="schedule__time ng-binding" ng-bind-html="atvalue.Name">11<sup>50</sup>-13<sup>25</sup></span>
+                    </td>
+                    <td>
+                        <!-- ngRepeat: cell in atvalue.Cells --><div class="schedule__day ng-binding ng-scope" ng-repeat="cell in atvalue.Cells" ng-bind-html="cell.CellName"><b>Математические&nbsp;модели&nbsp;в&nbsp;задачах&nbsp;управления, лекция</b><br>аудитория 501 корпус №&nbsp;8</div><!-- end ngRepeat: cell in atvalue.Cells -->
+                    </td>
+                </tr><!-- end ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><tr ng-repeat-end="" ng-repeat-start="(atkey,atvalue) in wdvalue.at" class="schedule__day-body ng-scope" ng-if="atvalue.Cells.length">
+                    <td>
+                        <span class="schedule__time ng-binding" ng-bind-html="atvalue.Name">13<sup>35</sup>-15<sup>10</sup></span>
+                    </td>
+                    <td>
+                        <!-- ngRepeat: cell in atvalue.Cells --><div class="schedule__day ng-binding ng-scope" ng-repeat="cell in atvalue.Cells" ng-bind-html="cell.CellName"><b>Математические&nbsp;модели&nbsp;в&nbsp;задачах&nbsp;управления, лабораторные занятия</b><br>аудитория 512 корпус №&nbsp;8</div><!-- end ngRepeat: cell in atvalue.Cells -->
+                    </td>
+                </tr><!-- end ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><tr ng-repeat-end="" ng-repeat-start="(atkey,atvalue) in wdvalue.at" class="schedule__day-body ng-scope" ng-if="atvalue.Cells.length">
+                    <td>
+                        <span class="schedule__time ng-binding" ng-bind-html="atvalue.Name">15<sup>40</sup>-17<sup>15</sup></span>
+                    </td>
+                    <td>
+                        <!-- ngRepeat: cell in atvalue.Cells --><div class="schedule__day ng-binding ng-scope" ng-repeat="cell in atvalue.Cells" ng-bind-html="cell.CellName"><b>Математические&nbsp;модели&nbsp;в&nbsp;задачах&nbsp;управления, лабораторные занятия</b><br>аудитория 512 корпус №&nbsp;8</div><!-- end ngRepeat: cell in atvalue.Cells -->
+                    </td>
+                </tr><!-- end ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at -->
+                <tr ng-repeat-end="" class="schedule__dsr ng-scope">
+                    <td></td>
+                    <td><b class="ng-binding">День самостоятельной работы</b></td>
+                </tr><!-- end ngRepeat: (wdkey,wdvalue) in result.wd --><tr ng-repeat-start="(wdkey,wdvalue) in result.wd" class="schedule__day-header ng-scope">
+                    <td></td>
+                    <td>
+                        <div class="schedule__horizontal-date">
+                            <b class="ng-binding">Вторник</b>
+                        </div>
+                    </td>
+                </tr>
+                <!-- ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><tr ng-repeat-end="" ng-repeat-start="(atkey,atvalue) in wdvalue.at" class="schedule__day-body ng-scope" ng-if="atvalue.Cells.length">
+                    <td>
+                        <span class="schedule__time ng-binding" ng-bind-html="atvalue.Name">8<sup>00</sup>-9<sup>35</sup></span>
+                    </td>
+                    <td>
+                        <!-- ngRepeat: cell in atvalue.Cells --><div class="schedule__day ng-binding ng-scope" ng-repeat="cell in atvalue.Cells" ng-bind-html="cell.CellName"><b>Вариационное&nbsp;исчисление, лекция</b><br>аудитория 501 корпус №&nbsp;8</div><!-- end ngRepeat: cell in atvalue.Cells -->
+                    </td>
+                </tr><!-- end ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><tr ng-repeat-end="" ng-repeat-start="(atkey,atvalue) in wdvalue.at" class="schedule__day-body ng-scope" ng-if="atvalue.Cells.length">
+                    <td>
+                        <span class="schedule__time ng-binding" ng-bind-html="atvalue.Name">9<sup>45</sup>-11<sup>20</sup></span>
+                    </td>
+                    <td>
+                        <!-- ngRepeat: cell in atvalue.Cells --><div class="schedule__day ng-binding ng-scope" ng-repeat="cell in atvalue.Cells" ng-bind-html="cell.CellName"><b>Вариационное&nbsp;исчисление, лекция</b><br>аудитория 501 корпус №&nbsp;8</div><!-- end ngRepeat: cell in atvalue.Cells -->
+                    </td>
+                </tr><!-- end ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><tr ng-repeat-end="" ng-repeat-start="(atkey,atvalue) in wdvalue.at" class="schedule__day-body ng-scope" ng-if="atvalue.Cells.length">
+                    <td>
+                        <span class="schedule__time ng-binding" ng-bind-html="atvalue.Name">11<sup>50</sup>-13<sup>25</sup></span>
+                    </td>
+                    <td>
+                        <!-- ngRepeat: cell in atvalue.Cells --><div class="schedule__day ng-binding ng-scope" ng-repeat="cell in atvalue.Cells" ng-bind-html="cell.CellName"><b>Вариационное&nbsp;исчисление, практические занятия</b><br>аудитория 501 корпус №&nbsp;8</div><!-- end ngRepeat: cell in atvalue.Cells -->
+                    </td>
+                </tr><!-- end ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at -->
+                <tr ng-repeat-end="" class="schedule__dsr ng-scope">
+                    <td></td>
+                    <td><b class="ng-binding">День самостоятельной работы</b></td>
+                </tr><!-- end ngRepeat: (wdkey,wdvalue) in result.wd --><tr ng-repeat-start="(wdkey,wdvalue) in result.wd" class="schedule__day-header ng-scope">
+                    <td></td>
+                    <td>
+                        <div class="schedule__horizontal-date">
+                            <b class="ng-binding">Среда</b>
+                        </div>
+                    </td>
+                </tr>
+                <!-- ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at -->
+                <tr ng-repeat-end="" class="schedule__dsr ng-scope">
+                    <td></td>
+                    <td><b class="ng-binding">День самостоятельной работы</b></td>
+                </tr><!-- end ngRepeat: (wdkey,wdvalue) in result.wd --><tr ng-repeat-start="(wdkey,wdvalue) in result.wd" class="schedule__day-header ng-scope">
+                    <td></td>
+                    <td>
+                        <div class="schedule__horizontal-date">
+                            <b class="ng-binding">Четверг</b>
+                        </div>
+                    </td>
+                </tr>
+                <!-- ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><tr ng-repeat-end="" ng-repeat-start="(atkey,atvalue) in wdvalue.at" class="schedule__day-body ng-scope" ng-if="atvalue.Cells.length">
+                    <td>
+                        <span class="schedule__time ng-binding" ng-bind-html="atvalue.Name">11<sup>50</sup>-13<sup>25</sup></span>
+                    </td>
+                    <td>
+                        <!-- ngRepeat: cell in atvalue.Cells --><div class="schedule__day ng-binding ng-scope" ng-repeat="cell in atvalue.Cells" ng-bind-html="cell.CellName"><b>Математические&nbsp;модели&nbsp;в&nbsp;задачах&nbsp;управления, лекция</b><br>аудитория 505 корпус №&nbsp;8</div><!-- end ngRepeat: cell in atvalue.Cells -->
+                    </td>
+                </tr><!-- end ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><tr ng-repeat-end="" ng-repeat-start="(atkey,atvalue) in wdvalue.at" class="schedule__day-body ng-scope" ng-if="atvalue.Cells.length">
+                    <td>
+                        <span class="schedule__time ng-binding" ng-bind-html="atvalue.Name">13<sup>35</sup>-15<sup>10</sup></span>
+                    </td>
+                    <td>
+                        <!-- ngRepeat: cell in atvalue.Cells --><div class="schedule__day ng-binding ng-scope" ng-repeat="cell in atvalue.Cells" ng-bind-html="cell.CellName"><b>Реологические&nbsp;модели, практические занятия</b><br>аудитория 301 корпус №&nbsp;8</div><!-- end ngRepeat: cell in atvalue.Cells -->
+                    </td>
+                </tr><!-- end ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><tr ng-repeat-end="" ng-repeat-start="(atkey,atvalue) in wdvalue.at" class="schedule__day-body ng-scope" ng-if="atvalue.Cells.length">
+                    <td>
+                        <span class="schedule__time ng-binding" ng-bind-html="atvalue.Name">15<sup>40</sup>-17<sup>15</sup></span>
+                    </td>
+                    <td>
+                        <!-- ngRepeat: cell in atvalue.Cells --><div class="schedule__day ng-binding ng-scope" ng-repeat="cell in atvalue.Cells" ng-bind-html="cell.CellName"><b>Реологические&nbsp;модели, лекция</b><br>аудитория 501 корпус №&nbsp;8</div><!-- end ngRepeat: cell in atvalue.Cells -->
+                    </td>
+                </tr><!-- end ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at -->
+                <tr ng-repeat-end="" class="schedule__dsr ng-scope">
+                    <td></td>
+                    <td><b class="ng-binding">День самостоятельной работы</b></td>
+                </tr><!-- end ngRepeat: (wdkey,wdvalue) in result.wd --><tr ng-repeat-start="(wdkey,wdvalue) in result.wd" class="schedule__day-header ng-scope">
+                    <td></td>
+                    <td>
+                        <div class="schedule__horizontal-date">
+                            <b class="ng-binding">Пятница</b>
+                        </div>
+                    </td>
+                </tr>
+                <!-- ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at -->
+                <tr ng-repeat-end="" class="schedule__dsr ng-scope">
+                    <td></td>
+                    <td><b class="ng-binding">День самостоятельной работы</b></td>
+                </tr><!-- end ngRepeat: (wdkey,wdvalue) in result.wd --><tr ng-repeat-start="(wdkey,wdvalue) in result.wd" class="schedule__day-header ng-scope">
+                    <td></td>
+                    <td>
+                        <div class="schedule__horizontal-date">
+                            <b class="ng-binding">Суббота</b>
+                        </div>
+                    </td>
+                </tr>
+                <!-- ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><tr ng-repeat-end="" ng-repeat-start="(atkey,atvalue) in wdvalue.at" class="schedule__day-body ng-scope" ng-if="atvalue.Cells.length">
+                    <td>
+                        <span class="schedule__time ng-binding" ng-bind-html="atvalue.Name">9<sup>45</sup>-11<sup>20</sup></span>
+                    </td>
+                    <td>
+                        <!-- ngRepeat: cell in atvalue.Cells --><div class="schedule__day ng-binding ng-scope" ng-repeat="cell in atvalue.Cells" ng-bind-html="cell.CellName"><b>Прикладной&nbsp;регрессионный&nbsp;анализ, лекция</b><br>аудитория 501 корпус №&nbsp;8</div><!-- end ngRepeat: cell in atvalue.Cells -->
+                    </td>
+                </tr><!-- end ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><tr ng-repeat-end="" ng-repeat-start="(atkey,atvalue) in wdvalue.at" class="schedule__day-body ng-scope" ng-if="atvalue.Cells.length">
+                    <td>
+                        <span class="schedule__time ng-binding" ng-bind-html="atvalue.Name">11<sup>50</sup>-13<sup>25</sup></span>
+                    </td>
+                    <td>
+                        <!-- ngRepeat: cell in atvalue.Cells --><div class="schedule__day ng-binding ng-scope" ng-repeat="cell in atvalue.Cells" ng-bind-html="cell.CellName"><b>Прикладной&nbsp;регрессионный&nbsp;анализ, лабораторные занятия</b><br>аудитория 510 корпус №&nbsp;8</div><!-- end ngRepeat: cell in atvalue.Cells -->
+                    </td>
+                </tr><!-- end ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><tr ng-repeat-end="" ng-repeat-start="(atkey,atvalue) in wdvalue.at" class="schedule__day-body ng-scope" ng-if="atvalue.Cells.length">
+                    <td>
+                        <span class="schedule__time ng-binding" ng-bind-html="atvalue.Name">13<sup>35</sup>-15<sup>10</sup></span>
+                    </td>
+                    <td>
+                        <!-- ngRepeat: cell in atvalue.Cells --><div class="schedule__day ng-binding ng-scope" ng-repeat="cell in atvalue.Cells" ng-bind-html="cell.CellName"><b>Прикладной&nbsp;регрессионный&nbsp;анализ, лабораторные занятия</b><br>аудитория 510 корпус №&nbsp;8</div><!-- end ngRepeat: cell in atvalue.Cells -->
+                    </td>
+                </tr><!-- end ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at -->
+                <tr ng-repeat-end="" class="schedule__dsr ng-scope">
+                    <td></td>
+                    <td><b class="ng-binding">День самостоятельной работы</b></td>
+                </tr><!-- end ngRepeat: (wdkey,wdvalue) in result.wd --><tr ng-repeat-start="(wdkey,wdvalue) in result.wd" class="schedule__day-header ng-scope">
+                    <td></td>
+                    <td>
+                        <div class="schedule__horizontal-date">
+                            <b class="ng-binding">Воскресенье</b>
+                        </div>
+                    </td>
+                </tr>
+                <!-- ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at -->
+                <tr ng-repeat-end="" class="schedule__dsr ng-scope">
+                    <td></td>
+                    <td><b class="ng-binding">Выходной день</b></td>
+                </tr><!-- end ngRepeat: (wdkey,wdvalue) in result.wd -->
+            </tbody>
+        </table>
+		
+		<br>
+		
+		<table class="schedule ng-scope" id="entriestable" ng-if="result">
+            <colgroup><col class="schedule__time-col">
+            <col class="schedule__group-col">
+            </colgroup><tbody>
+                <!-- ngRepeat: (wdkey,wdvalue) in result.wd --><tr ng-repeat-start="(wdkey,wdvalue) in result.wd" class="schedule__day-header ng-scope">
+                    <td></td>
+                    <td>
+                        <div class="schedule__horizontal-date">
+                            <b class="ng-binding">Понедельник</b>
+                        </div>
+                    </td>
+                </tr>
+                <!-- ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><tr ng-repeat-end="" ng-repeat-start="(atkey,atvalue) in wdvalue.at" class="schedule__day-body ng-scope" ng-if="atvalue.Cells.length">
+                    <td>
+                        <span class="schedule__time ng-binding" ng-bind-html="atvalue.Name">8<sup>00</sup>-9<sup>35</sup></span>
+                    </td>
+                    <td>
+                        <!-- ngRepeat: cell in atvalue.Cells --><div class="schedule__day ng-binding ng-scope" ng-repeat="cell in atvalue.Cells" ng-bind-html="cell.CellName"><b>Информационные&nbsp;технологии&nbsp;в&nbsp;глобальных&nbsp;сетях&nbsp;данных, лекция</b><br>аудитория 305 корпус №&nbsp;8</div><!-- end ngRepeat: cell in atvalue.Cells -->
+                    </td>
+                </tr><!-- end ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><tr ng-repeat-end="" ng-repeat-start="(atkey,atvalue) in wdvalue.at" class="schedule__day-body ng-scope" ng-if="atvalue.Cells.length">
+                    <td>
+                        <span class="schedule__time ng-binding" ng-bind-html="atvalue.Name">9<sup>45</sup>-11<sup>20</sup></span>
+                    </td>
+                    <td>
+                        <!-- ngRepeat: cell in atvalue.Cells --><div class="schedule__day ng-binding ng-scope" ng-repeat="cell in atvalue.Cells" ng-bind-html="cell.CellName"><b>Информационные&nbsp;технологии&nbsp;в&nbsp;глобальных&nbsp;сетях&nbsp;данных, лекция</b><br>аудитория 305 корпус №&nbsp;8</div><!-- end ngRepeat: cell in atvalue.Cells -->
+                    </td>
+                </tr><!-- end ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><tr ng-repeat-end="" ng-repeat-start="(atkey,atvalue) in wdvalue.at" class="schedule__day-body ng-scope" ng-if="atvalue.Cells.length">
+                    <td>
+                        <span class="schedule__time ng-binding" ng-bind-html="atvalue.Name">11<sup>50</sup>-13<sup>25</sup></span>
+                    </td>
+                    <td>
+                        <!-- ngRepeat: cell in atvalue.Cells --><div class="schedule__day ng-binding ng-scope" ng-repeat="cell in atvalue.Cells" ng-bind-html="cell.CellName"><b>Стохастические&nbsp;модели&nbsp;и&nbsp;теория&nbsp;надежности, лекция</b><br>аудитория 514 корпус №&nbsp;8</div><!-- end ngRepeat: cell in atvalue.Cells -->
+                    </td>
+                </tr><!-- end ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><tr ng-repeat-end="" ng-repeat-start="(atkey,atvalue) in wdvalue.at" class="schedule__day-body ng-scope" ng-if="atvalue.Cells.length">
+                    <td>
+                        <span class="schedule__time ng-binding" ng-bind-html="atvalue.Name">13<sup>35</sup>-15<sup>10</sup></span>
+                    </td>
+                    <td>
+                        <!-- ngRepeat: cell in atvalue.Cells --><div class="schedule__day ng-binding ng-scope" ng-repeat="cell in atvalue.Cells" ng-bind-html="cell.CellName"><b>Стохастические&nbsp;модели&nbsp;и&nbsp;теория&nbsp;надежности, практические занятия</b><br>аудитория 514 корпус №&nbsp;8</div><!-- end ngRepeat: cell in atvalue.Cells -->
+                    </td>
+                </tr><!-- end ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at -->
+                <tr ng-repeat-end="" class="schedule__dsr ng-scope">
+                    <td></td>
+                    <td><b class="ng-binding">День самостоятельной работы</b></td>
+                </tr><!-- end ngRepeat: (wdkey,wdvalue) in result.wd --><tr ng-repeat-start="(wdkey,wdvalue) in result.wd" class="schedule__day-header ng-scope">
+                    <td></td>
+                    <td>
+                        <div class="schedule__horizontal-date">
+                            <b class="ng-binding">Вторник</b>
+                        </div>
+                    </td>
+                </tr>
+                <!-- ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><tr ng-repeat-end="" ng-repeat-start="(atkey,atvalue) in wdvalue.at" class="schedule__day-body ng-scope" ng-if="atvalue.Cells.length">
+                    <td>
+                        <span class="schedule__time ng-binding" ng-bind-html="atvalue.Name">13<sup>35</sup>-15<sup>10</sup></span>
+                    </td>
+                    <td>
+                        <!-- ngRepeat: cell in atvalue.Cells --><div class="schedule__day ng-binding ng-scope" ng-repeat="cell in atvalue.Cells" ng-bind-html="cell.CellName"><b>Практико–ориентированный&nbsp;проект, практические занятия</b><br>аудитория 306 корпус №&nbsp;8</div><!-- end ngRepeat: cell in atvalue.Cells -->
+                    </td>
+                </tr><!-- end ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at -->
+                <tr ng-repeat-end="" class="schedule__dsr ng-scope">
+                    <td></td>
+                    <td><b class="ng-binding">День самостоятельной работы</b></td>
+                </tr><!-- end ngRepeat: (wdkey,wdvalue) in result.wd --><tr ng-repeat-start="(wdkey,wdvalue) in result.wd" class="schedule__day-header ng-scope">
+                    <td></td>
+                    <td>
+                        <div class="schedule__horizontal-date">
+                            <b class="ng-binding">Среда</b>
+                        </div>
+                    </td>
+                </tr>
+                <!-- ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at -->
+                <tr ng-repeat-end="" class="schedule__dsr ng-scope">
+                    <td></td>
+                    <td><b class="ng-binding">День самостоятельной работы</b></td>
+                </tr><!-- end ngRepeat: (wdkey,wdvalue) in result.wd --><tr ng-repeat-start="(wdkey,wdvalue) in result.wd" class="schedule__day-header ng-scope">
+                    <td></td>
+                    <td>
+                        <div class="schedule__horizontal-date">
+                            <b class="ng-binding">Четверг</b>
+                        </div>
+                    </td>
+                </tr>
+                <!-- ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><tr ng-repeat-end="" ng-repeat-start="(atkey,atvalue) in wdvalue.at" class="schedule__day-body ng-scope" ng-if="atvalue.Cells.length">
+                    <td>
+                        <span class="schedule__time ng-binding" ng-bind-html="atvalue.Name">11<sup>50</sup>-13<sup>25</sup></span>
+                    </td>
+                    <td>
+                        <!-- ngRepeat: cell in atvalue.Cells --><div class="schedule__day ng-binding ng-scope" ng-repeat="cell in atvalue.Cells" ng-bind-html="cell.CellName"><b>Реологические&nbsp;модели, лекция</b><br>аудитория 501 корпус №&nbsp;8</div><!-- end ngRepeat: cell in atvalue.Cells -->
+                    </td>
+                </tr><!-- end ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><tr ng-repeat-end="" ng-repeat-start="(atkey,atvalue) in wdvalue.at" class="schedule__day-body ng-scope" ng-if="atvalue.Cells.length">
+                    <td>
+                        <span class="schedule__time ng-binding" ng-bind-html="atvalue.Name">13<sup>35</sup>-15<sup>10</sup></span>
+                    </td>
+                    <td>
+                        <!-- ngRepeat: cell in atvalue.Cells --><div class="schedule__day ng-binding ng-scope" ng-repeat="cell in atvalue.Cells" ng-bind-html="cell.CellName"><b>Математические&nbsp;основы&nbsp;методов&nbsp;защиты&nbsp;информации, лекция</b><br>аудитория 501 корпус №&nbsp;8</div><!-- end ngRepeat: cell in atvalue.Cells -->
+                    </td>
+                </tr><!-- end ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><tr ng-repeat-end="" ng-repeat-start="(atkey,atvalue) in wdvalue.at" class="schedule__day-body ng-scope" ng-if="atvalue.Cells.length">
+                    <td>
+                        <span class="schedule__time ng-binding" ng-bind-html="atvalue.Name">15<sup>40</sup>-17<sup>15</sup></span>
+                    </td>
+                    <td>
+                        <!-- ngRepeat: cell in atvalue.Cells --><div class="schedule__day ng-binding ng-scope" ng-repeat="cell in atvalue.Cells" ng-bind-html="cell.CellName"><b>Математические&nbsp;основы&nbsp;методов&nbsp;защиты&nbsp;информации, лабораторные занятия</b><br>аудитория 510 корпус №&nbsp;8</div><!-- end ngRepeat: cell in atvalue.Cells -->
+                    </td>
+                </tr><!-- end ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><tr ng-repeat-end="" ng-repeat-start="(atkey,atvalue) in wdvalue.at" class="schedule__day-body ng-scope" ng-if="atvalue.Cells.length">
+                    <td>
+                        <span class="schedule__time ng-binding" ng-bind-html="atvalue.Name">17<sup>25</sup>-19<sup>00</sup></span>
+                    </td>
+                    <td>
+                        <!-- ngRepeat: cell in atvalue.Cells --><div class="schedule__day ng-binding ng-scope" ng-repeat="cell in atvalue.Cells" ng-bind-html="cell.CellName"><b>Математические&nbsp;основы&nbsp;методов&nbsp;защиты&nbsp;информации, лабораторные занятия</b><br>аудитория 510 корпус №&nbsp;8</div><!-- end ngRepeat: cell in atvalue.Cells -->
+                    </td>
+                </tr><!-- end ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at -->
+                <tr ng-repeat-end="" class="schedule__dsr ng-scope">
+                    <td></td>
+                    <td><b class="ng-binding">День самостоятельной работы</b></td>
+                </tr><!-- end ngRepeat: (wdkey,wdvalue) in result.wd --><tr ng-repeat-start="(wdkey,wdvalue) in result.wd" class="schedule__day-header ng-scope">
+                    <td></td>
+                    <td>
+                        <div class="schedule__horizontal-date">
+                            <b class="ng-binding">Пятница</b>
+                        </div>
+                    </td>
+                </tr>
+                <!-- ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at -->
+                <tr ng-repeat-end="" class="schedule__dsr ng-scope">
+                    <td></td>
+                    <td><b class="ng-binding">День самостоятельной работы</b></td>
+                </tr><!-- end ngRepeat: (wdkey,wdvalue) in result.wd --><tr ng-repeat-start="(wdkey,wdvalue) in result.wd" class="schedule__day-header ng-scope">
+                    <td></td>
+                    <td>
+                        <div class="schedule__horizontal-date">
+                            <b class="ng-binding">Суббота</b>
+                        </div>
+                    </td>
+                </tr>
+                <!-- ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><tr ng-repeat-end="" ng-repeat-start="(atkey,atvalue) in wdvalue.at" class="schedule__day-body ng-scope" ng-if="atvalue.Cells.length">
+                    <td>
+                        <span class="schedule__time ng-binding" ng-bind-html="atvalue.Name">8<sup>00</sup>-9<sup>35</sup></span>
+                    </td>
+                    <td>
+                        <!-- ngRepeat: cell in atvalue.Cells --><div class="schedule__day ng-binding ng-scope" ng-repeat="cell in atvalue.Cells" ng-bind-html="cell.CellName"><b>Менеджмент&nbsp;и&nbsp;маркетинг, лекция</b><br>Личный кабинет обучающегося</div><!-- end ngRepeat: cell in atvalue.Cells -->
+                    </td>
+                </tr><!-- end ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><tr ng-repeat-end="" ng-repeat-start="(atkey,atvalue) in wdvalue.at" class="schedule__day-body ng-scope" ng-if="atvalue.Cells.length">
+                    <td>
+                        <span class="schedule__time ng-binding" ng-bind-html="atvalue.Name">9<sup>45</sup>-11<sup>20</sup></span>
+                    </td>
+                    <td>
+                        <!-- ngRepeat: cell in atvalue.Cells --><div class="schedule__day ng-binding ng-scope" ng-repeat="cell in atvalue.Cells" ng-bind-html="cell.CellName"><b>Менеджмент&nbsp;и&nbsp;маркетинг, лекция</b><br>Личный кабинет обучающегося</div><!-- end ngRepeat: cell in atvalue.Cells -->
+                    </td>
+                </tr><!-- end ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at -->
+                <tr ng-repeat-end="" class="schedule__dsr ng-scope">
+                    <td></td>
+                    <td><b class="ng-binding">День самостоятельной работы</b></td>
+                </tr><!-- end ngRepeat: (wdkey,wdvalue) in result.wd --><tr ng-repeat-start="(wdkey,wdvalue) in result.wd" class="schedule__day-header ng-scope">
+                    <td></td>
+                    <td>
+                        <div class="schedule__horizontal-date">
+                            <b class="ng-binding">Воскресенье</b>
+                        </div>
+                    </td>
+                </tr>
+                <!-- ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at --><!-- ngIf: atvalue.Cells.length --><!-- end ngRepeat: (atkey,atvalue) in wdvalue.at -->
+                <tr ng-repeat-end="" class="schedule__dsr ng-scope">
+                    <td></td>
+                    <td><b class="ng-binding">Выходной день</b></td>
+                </tr><!-- end ngRepeat: (wdkey,wdvalue) in result.wd -->
+            </tbody>
+        </table>

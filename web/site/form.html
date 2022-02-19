@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link type="image/x-icon" rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="style/main.css">
+    <link rel="stylesheet" type="text/css" href="style/form.css">
+    <title>Title</title>
+</head>
+<body>
+<div data-import-src="_header.html"></div>
+<div id="content">
+    <form id="form">
+        <input name="name" placeholder="Ваше имя">
+        <input type="submit" value="Запросить привет">
+    </form>
+    <script>
+        const params = Object.fromEntries(new URLSearchParams(window.location.search).entries());
+
+        if (name = params.name) {
+            document.getElementById('form').style.display = 'none'
+            document.write('<p>', name === 'Виталий' ? 'Уже виделись' :`Привет, ${name}`, '.</p>')
+        }
+    </script>
+</div>
+<div data-import-src="_footer.html"></div>
+<script src="html-import.js"></script>
+</body>
+</html>

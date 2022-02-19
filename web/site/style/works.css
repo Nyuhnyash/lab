@@ -1,0 +1,22 @@
+#content {
+    display: grid;
+    margin: 3vw;
+    grid-template: auto / auto auto;
+}
+
+#content div {
+    display: block;
+    size: auto;
+}
+
+#content div * {
+    display: block;
+}
+
+
+#content div .source:before {
+    content: 'Source code';
+}
+#content div img {
+    width: 30vw;
+}

@@ -1,0 +1,9 @@
+#content {
+    display: flex;
+    margin: 3vw;
+    justify-content: center;
+}
+
+#content div {
+    width: 50%;
+}

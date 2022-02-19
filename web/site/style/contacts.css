@@ -1,0 +1,9 @@
+#content {
+    display: grid;
+    margin: 3vw;
+    grid-template: auto / auto auto;
+}
+
+#content label {
+    text-align: right;
+}
