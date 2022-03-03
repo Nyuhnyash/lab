@@ -11,7 +11,7 @@ switch ($_GET['q']) {
         break;
     case '2':
         foreach (file($filename) as $line) {
-            list($fullname, , , , , ) = explode(';', $line);
+            $fullname = explode(';', $line)[0];
             $name = explode(' ', $fullname)[1];
 
             if (preg_match('/^[аеёиоуэюяАЕЁИОУЭЮЯ]{1}[а-я]*[^аеёиоуэюяьъ]$/u', $name))
@@ -36,8 +36,10 @@ switch ($_GET['q']) {
     case 'email-providers':
         foreach (file($filename) as $line) {
             $email = explode(';', $line)[3];
-//            if (preg_match('/^.+@(.+)$/u', $email))
-                echo $email . '<br';
+            $providers[] = explode('@', $email)[1];
+        }
+        foreach (array_unique($providers) as $provider) {
+            echo $provider . '<br>';
         }
         break;
 }

@@ -2,6 +2,7 @@
 <style>
     form * { display: block; }
     input[type='radio'], button { display: inline-block; }
+    a { display: block}
 </style>
 
 <?php 
@@ -73,5 +74,9 @@ function langCheckbox($lang) { return
 ?>
 
 <a href="statistics.php">Вывести статистику</a>
-
-<a href="show.php">Пётры</a>
+<hr>
+<a href="show.php?q=peter">Пётры</a>
+<a href="show.php?q=2">Имена начинающихся с гласной и оканчивающихся на согласную букву</a>
+<a href="show.php?q=3">Отчества длиной от 7 до 10 букв</a>
+<a href="show.php?q=gmail">Адреса электронной почты, зарегистрированные на сервере «gmail.com»</a>
+<a href="show.php?q=email-providers">Почтовые серверы</a>

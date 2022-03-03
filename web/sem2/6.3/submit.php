@@ -33,7 +33,7 @@ function date_format_ru($datetime) {
 }
 
 
-
+$phone = '';
 function validate($fields){
     $errors = array();
     $re = array(
@@ -55,12 +55,9 @@ function validate($fields){
         }
     }
 
-    if (filter_var(email, FILTER_VALIDATE_EMAIL)) {
+    if (!filter_var(email, FILTER_VALIDATE_EMAIL)) {
         $errors[] = 'email';
     }
-
-
-
     return empty($errors) ? true : array_unique($errors);
 }
 
@@ -76,6 +73,18 @@ if (is_array($validate)) {
     echo '</ul>';
 } else {
     $languages = $_GET['languages'];
+
+    preg_match_all("/^(?:\+7|8)([0-9 -]{10})$/u", phone, $match);
+    $phone = $match[1][0];
+    $phone = sprintf('+7 %s %s-%s-%s',
+        substr($phone, 0, 3),
+        substr($phone, 3, 3),
+        substr($phone, 6, 2),
+        substr($phone, 8, 2)
+    );
+
+    $phone = isset($phone) ? $phone : 'Нет';
+
     $f = fopen('data.txt', 'a');
     fprintf($f, "%s %s %s;%s;%d;%s;%s;%s\n", lastname, firstname, middlename, birthdate, course, email, details, implode("|",$languages));
 
@@ -89,6 +98,7 @@ if (is_array($validate)) {
     <strong>Студент</strong> ' . course . ' курса<br>
     <strong>Дата рождения:</strong> ' . date_format_ru(date_create(birthdate)) . '<br>
     <strong>E-mail:</strong> ' . email . '<br>
+    <strong>Телефон:</strong> ' . sprintf('%s', $phone) . '<br>
     <strong>Языковая подготовка:</strong> ' . str_replace("\r\n", '<br>', details) . '<br>
     <hr>';
 
