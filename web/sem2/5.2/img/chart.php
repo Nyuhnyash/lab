@@ -1,6 +1,6 @@
 <?php
-require '../vendor/autoload.php';
-require "statUtil.php";
+require '../../vendor/autoload.php';
+require "../statUtil.php";
 
 use CpChart\Chart\Pie;
 use CpChart\Data;

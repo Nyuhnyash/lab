@@ -20,6 +20,9 @@ function langCheckbox($lang) { return
 
 ?>
 
+<img src="img/img1.php">
+<img src="img/img2.php">
+
 <h2>Форма записи на языковой курс</h2>
 
 <form action="submit.php">

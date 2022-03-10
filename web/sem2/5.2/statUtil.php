@@ -1,4 +1,6 @@
 <?php
+const datapath = __DIR__ . '/data.txt';
+
 function getInitDataArray() {
     foreach (array('Французский', 'Испанский', 'Итальянский', 'Португальский', 'Китайский') as $lang) {
         foreach (range(1, 5) as $course) {
@@ -8,7 +10,7 @@ function getInitDataArray() {
     return $data;
 }
 
-function getDataFromFile($filename = 'data.txt') {
+function getDataFromFile($filename = datapath) {
     $data = getInitDataArray();
     foreach (file($filename) as $line) {
         list(, , $course, , , $langRaw) = explode(';', $line);
@@ -30,4 +32,8 @@ function getSums($data = null) {
         }
     }
     return array($byLang, $byCourse);
+}
+
+function getStudentsCount($filename = datapath) {
+    return count(file($filename));
 }

@@ -59,6 +59,7 @@ include 'statUtil.php'
     </tbody>
 </table>
 
-<img src="chart.php" width="100%">
+<img src="img/chart.php" width="100%">
+<img src="img/chart2.php" width="100%">
 
 <button onclick="window.location.href = window.referrer || 'search.php'">Назад</button>
