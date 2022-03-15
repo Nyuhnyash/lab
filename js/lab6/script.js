@@ -61,6 +61,6 @@ function printTable(operation) {
 printTable('+')
 printTable('*')
 const tables =document.getElementsByTagName('table');
-for (let table of tables) {
+for (const table of tables) {
     table.style.fontFamily = 'Courier New';
 }
