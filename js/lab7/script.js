@@ -79,7 +79,3 @@ for (const table of tables) {
     table.addEventListener('mouseover', onMouse);
     table.addEventListener('mouseout', ev => setTimeout(() => onMouse(ev), 80));
 }
-// tables.forEach(table => {
-    // table.addEventListener('mouseover', onMouse);
-    // table.addEventListener('mouseout', onMouse);
-// });
