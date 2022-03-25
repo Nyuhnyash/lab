@@ -1,8 +1,27 @@
 // #1
+const randInt = () => Math.round(Math.random() * 10);
+const a = randInt();
+const b = randInt();
+
+const input = prompt(`${a}x = ${b}; Чему равен x?`);
+alert(a * input === b ? "Ok" : "Fail");
 
 // #2
+const now = new Date();
+const tommorow = new Date();
+tommorow.setHours(0,0,0,0);
+tommorow.setDate(now.getDate() + 1);
+console.log(tommorow - now);
 
 // #3
+const upperBound = 1e6;
+let sum = 0;
+console.time();
+for (let i = 0; i < upperBound; i++) {
+    sum += i * i;
+}
+console.timeEnd();
+
 
 // #4
 const [day, month, year] = prompt('DD MM YYYY').split(' ');
