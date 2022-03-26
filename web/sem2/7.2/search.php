@@ -1,4 +1,5 @@
-﻿<meta charset="UTF-8">
+<?php include "_auth-check.php" ?>
+<meta charset="UTF-8">
 <style>
     form * { display: block; }
     input[type='radio'], button { display: inline-block; }
@@ -6,17 +7,6 @@
 </style>
 
 <?php
-session_start();
-if (empty($_SESSION['login'])
-    || empty($_SESSION['password'])
-    || $_SESSION['password'] != file("password.txt")[0]
-) {
-
-    http_response_code(401);
-    echo "Не авторизован";
-    die;
-}
-
 $meeting_info = array(
     'Французский'   => array('2009-10-27 10:00', 433),
     'Испанский'     => array('2009-10-27 10:00', 431),

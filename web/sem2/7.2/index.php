@@ -1,4 +1,7 @@
-﻿<meta charset="UTF-8">
+<?php
+session_start();
+?>
+<meta charset="UTF-8">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
 
 <style>
@@ -7,11 +10,6 @@
 </style>
 
 <?php
-session_start();
-if (isset($_SESSION['login'])) {
-    echo "Вход выполнен: ${_SESSION['login']}";
-}
-
 function courseRadio($course) { return
     "<label>
         <input name='course' type='radio' value='$course'>
@@ -58,5 +56,12 @@ function langCheckbox($lang) { return
 </form>
 
 <div style="width: 300px">
-<?php include "_login.php";?>
+<?php include "_login.php";
+if (isset($_SESSION['login'])) {
+    echo "Вход выполнен: ${_SESSION['login']}";
+    echo '<br>';
+    echo '<a href="_logout.php">Выйти</a>';
+}
+
+?>
 </div>
