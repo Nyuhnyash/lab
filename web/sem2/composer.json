@@ -2,6 +2,7 @@
   "name": "nyuhnyash/sem2",
   "minimum-stability": "stable",
   "require": {
-    "szymach/c-pchart": "^3.0"
+    "szymach/c-pchart": "^3.0",
+    "ext-json": "*"
   }
 }
