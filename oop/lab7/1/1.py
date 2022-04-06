@@ -35,19 +35,28 @@ class Position:
         try:
             match cmd:
                 case 'ВНИЗ':
-                    self.horizontal = Vertical(self.horizontal.value - count)
+                    self.horizontal = Horizontal(self.horizontal.value - count)
                 case 'ВВЕРХ':
-                    self.horizontal = Vertical(self.horizontal.value + count)
+                    self.horizontal = Horizontal(self.horizontal.value + count)
                 case 'ВПРАВО':
                     self.vertical = Vertical(self.vertical.value + count)
                 case 'ВЛЕВО':
                     self.vertical = Vertical(self.vertical.value - count)
         except ValueError:
             print('Невозможных ход', file=stderr)
-        
+            match cmd:
+                case 'ВНИЗ':
+                    self.horizontal = Horizontal.One
+                case 'ВВЕРХ':
+                    self.horizontal = Horizontal.Eight
+                case 'ВПРАВО':
+                    self.vertical = Vertical.H
+                case 'ВЛЕВО':
+                    self.vertical = Vertical.A
 
 
-with open('ant2.txt', mode='r', encoding='utf8') as f:
+
+with open('ant.txt', mode='r', encoding='utf8') as f:
     position = Position(f.readline())
     print(position)
     for line in f:
