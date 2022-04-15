@@ -1,4 +1,7 @@
 ﻿<form>
+    <label>ФИО
+        <input name="fio">
+    </label>
     <select name="field">
         <option value=""></option>
         <option value="birthdate">День рождения</option>
@@ -16,29 +19,34 @@
 if (!is_null($_GET['field'])) {
     $field = $_GET['field'];
     $order = $_GET['order'];
-    $conn = mysql_connect("localhost", "root", "") or 
-        die("Невозможно установить соединение: ". mysql_error());
+    $conn = mysqli_connect("i54jns50s3z6gbjt.chr7pe7iynqr.eu-west-1.rds.amazonaws.com", "xluqi36zvo66mrf6", "y2y0j86qrkayi6vk", "xd6g6am3xoko3hza") or 
+        die("Невозможно установить соединение: ". mysqli_error($conn));
     
-    mysql_select_db('task9', $conn);
     $fields = empty($field) ? "*" : "fio, $field";
     
-    $sql = "select $fields from students";
+    $sql = "select $fields from student";
 
     if ($field == 'course') {
         $course = $_GET['course'];
         $sql = $sql . " where course = $course";
     }
 
+    if ($fio = $_GET['fio']) {
+        $sql = $sql . " where fio like '%$fio%'";
+    }
+
+
+
     $order_field = empty($field) ? "fio" : $field;
     $sql = $sql . " order by $order_field $order";
     
-    $response = mysql_query($sql, $conn);
+    $response = mysqli_query($conn, $sql);
     if (!$response) {
-        var_dump(mysql_error());
+        var_dump(mysqli_error($conn));
         die;
     }
-    while($row = mysql_fetch_array($response, MYSQL_ASSOC)) {
-        print_r($row);
+    while($rows = mysqli_fetch_array($response, MYSQLI_ASSOC)) {
+        echo join(" ", $rows) . "<br>";
     }
-    mysql_close($conn);
+    mysqli_close($conn);
 }

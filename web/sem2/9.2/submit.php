@@ -83,7 +83,7 @@ if (is_array($validate)) {
         substr($phone, 8, 2)
     );
 
-    define('phone', isset($phone) ? $phone : 'Нет');
+    // define('phone', isset($phone) ? $phone : 'Нет');
 
     insert();
 
@@ -112,11 +112,11 @@ if (is_array($validate)) {
 }
 
 function insert() {
-    $conn = mysql_connect("localhost", "root", "") or 
-        die("Невозможно установить соединение: ". mysql_error());
+    // $conn = mysqli_connect("localhost", "root", "") or 
+    $conn = mysqli_connect("i54jns50s3z6gbjt.chr7pe7iynqr.eu-west-1.rds.amazonaws.com", "xluqi36zvo66mrf6", "y2y0j86qrkayi6vk", "xd6g6am3xoko3hza") or 
+        die("Невозможно установить соединение: ". mysqli_error($conn));
     echo "Соединение установлено";
-    mysql_select_db('task9', $conn);
-    $sql = sprintf("insert into students values (NULL, '%s %s %s', %s, '%s', '%s', '%s', '%s');",
+    $sql = sprintf("insert into student values (NULL, '%s %s %s', %s, '%s', '%s', '%s', '%s');",
         lastname,
         firstname,
         middlename,
@@ -126,11 +126,11 @@ function insert() {
         phone,
         details
     );
-    $status = mysql_query($sql, $conn);
+    $status = mysqli_query($conn, $sql);
     if (!$status) {
-        var_dump(mysql_error());
+        var_dump(mysqli_error($conn));
         die;
     }
-    mysql_close($conn);
+    mysqli_close($conn);
 }
 ?>
