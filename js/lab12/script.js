@@ -155,12 +155,13 @@ function changePageCountView() {
     for (let i = 0; i < pageCount; i++) {
         pagination.insertAdjacentHTML(
             "beforeend",
-            `<li class="page-item"><a class="page-link" href="#">${i + 1}</a></li>`
+            `<li class="page-item" value="${i + 1}"><a class="page-link" href="#">${i + 1}</a></li>`
         );
     }
 
     pagination.insertAdjacentHTML('beforeend', '<li class="page-item"><a id="nextPage" class="page-link" href="#"">Следующая</a></li>');
-
+    currentPageItem = document.querySelector('.page-item[value="1"]');
+    currentPageItem.classList.add('active');
 }
 /**
  * @param  {array} data
@@ -180,6 +181,8 @@ let currentPage;
 const paginationStep = document.getElementById('paginationStep');
 const pagination = document.querySelector('.pagination');
 
+let currentPageItem;
+
 (async () => {
     data = await loadData();
     restoreFilterFormValues();
@@ -193,21 +196,30 @@ const pagination = document.querySelector('.pagination');
 
     pagination.addEventListener('click', ev => {
         
-        if (ev.target.id === "prevPage") {
+        if (ev.target.id === 'prevPage') {
             prevPage(ev);
-        } else if (ev.target.id === "nextPage") {
+        } else if (ev.target.id === 'nextPage') {
             nextPage(ev);
+            currentPageItem?.classList.remove('active')
+            currentPageItem = document.querySelector(`.page-item[value="${currentPage}"]`);
         } else {
-            currentPage = new Number(ev.target.innerText);
-        console.log('dfdfd')
+            const pageNum = new Number(ev.target.innerText);
+            if (isNaN(pageNum)) { return; }
 
+            currentPage = pageNum;
+
+            currentPageItem?.classList.remove('active')
+            currentPageItem = ev.target.parentNode;
         }
 
-        const page = getPage(filteredData);
-        updateTable(page);
+        
+        currentPageItem.classList.add('active');
 
-        console.log(currentPage)
-    })
+            const page = getPage(filteredData);
+            updateTable(page);
+
+            console.log(currentPage);
+    });
 
     changePageCountView();
 
