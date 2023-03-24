@@ -7,7 +7,7 @@ module.exports = function (grammar) {
 
     // нет нетерминалов в исходной строке
     if ( ! keys.flatMap(r => [...r]).some(isNonterminal)) {
-            return "incorrect";
+            return 'incorrect';
     }
 
     // укорачивающие грамматики
@@ -16,7 +16,7 @@ module.exports = function (grammar) {
             value.length !== 0 // пропускаем пустую строку
             && key.length > value.length)
         )
-            return "unrestricted";
+            return 'unrestricted';
     }
 
     // контекстно-свободные грамматики
@@ -28,14 +28,19 @@ module.exports = function (grammar) {
     }
 
     // линейная
-    if (values.every(variant => variant.length === 0
-        || [...variant].some(isNonterminal))) {
-
-        return values.every(variant => variant.length === 0
-            || isNonterminal(variant.at(-1)))
+    const isLinear = values.every(variant => {
+        if (variant.length === 0) return true;
+        const nonterminalCount = [...variant].filter(isNonterminal).length;
+        return nonterminalCount <= 1;
+    });
+    if (isLinear) {
+        return values
+            .filter(variant => [...variant].some(isNonterminal))
+            .every(variant => isNonterminal(variant.at(-1)))
             ? 'right-regular (right-linear)'
             : 'linear';
-    }
+        }
+    
 
-    return "context-free";
+    return 'context-free';
 }

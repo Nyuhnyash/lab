@@ -9,7 +9,6 @@ module.exports = class Grammar {
         this.data = data;
     }
 
-
      /**
       * @param {NodeJS.ReadStream & {fd: 0}} stream
       * @returns {Promise<Grammar>}
@@ -20,7 +19,7 @@ module.exports = class Grammar {
              stream.addListener('data', d => {
                  let line = d.toString();
 
-                 if (line === '\r\n') {
+                 if (line === '\n' || line === '\r\n') {
                      stream.pause();
                      resolve(new Grammar(data));
                      return;

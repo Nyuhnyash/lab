@@ -3,10 +3,8 @@ const Grammar = require("../common/grammar");
 
 (async () => {
     const input = require("./input.json");
-    // const grammar = new Grammar(input);
+    const grammar = new Grammar(input);
 
-    const grammar = await Grammar.parseFromReadStream(process.stdin);
-    console.log(grammar.data)
     // #1
     console.log("Chomsky grammar class:", grammar.getClass());
 
