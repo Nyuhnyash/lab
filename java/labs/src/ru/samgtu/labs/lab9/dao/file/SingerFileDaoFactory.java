@@ -8,6 +8,9 @@ public class SingerFileDaoFactory implements AbstractSingerDaoFactory {
 
     @Override
     public SingerDao createSingerDao() {
-        return INSTANCE == null ? INSTANCE = new SingerFileDao() : INSTANCE;
+        var dir = "src/ru/samgtu/labs/lab9/";
+        if (INSTANCE == null)
+            INSTANCE = new SingerFileDao(dir + "singers.txt", dir + "output_singers.txt");
+        return INSTANCE;
     }
 }

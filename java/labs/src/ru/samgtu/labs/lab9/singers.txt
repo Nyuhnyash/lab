@@ -1,0 +1,28 @@
+Singer: Queen
+	Album: Queen, Hard Rock
+		Song: Keep Yourself Alive, 3:15
+		Song: Doing All Right, 4:09
+		Song: Great King Rat, 5:42
+		Song: My Fairy King, 4:07
+		Song: Liar, 6:25
+		Song: The Night Comes Down, 4:23
+		Song: Modern Times Rock 'N' Roll, 1:48
+		Song: Son And Daughter, 3:18
+		Song: Jesus, 3:45
+		Song: Seven Seas Of Rhye, 1:08
+	Album: Queen II, Art Rock
+	Album: Sheer Heart Attack, Hard Rock
+	Album: A Night at the Opera, Progressive Rock
+	Album: A Day at the Races, Hard Rock
+	Album: News of the World, Hard Rock
+	Album: Jazz, Hard Rock
+	Album: The Game, Rock
+	Album: Flash Gordon, Rock
+	Album: Hot Space, Pop Rock
+	Album: The Works, Pop Rock
+	Album: A Kind of Magic, Hard Rock
+	Album: The Miracle, Rock
+	Album: Innuendo, Hard Rock
+	Album: Made in Heaven, Rock
+Singer: The Beatles
+	Album: Abbey Road, Rock
