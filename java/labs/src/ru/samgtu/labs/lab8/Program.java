@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.TreeMap;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -61,7 +62,7 @@ public class Program {
 
         names.stream().collect(Collectors.toMap(s -> s, String::length));
 
-        names.stream().collect(Collectors.groupingBy(String::length));
+        names.stream().collect(Collectors.groupingBy(String::length, TreeMap::new, Collectors.toList()));
 
         names.stream().collect(Collectors.partitioningBy(s -> isVowel(s.charAt(0))));
     }
