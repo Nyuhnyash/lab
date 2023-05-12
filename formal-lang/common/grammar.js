@@ -1,6 +1,6 @@
 const getClass = require('./classIdentifier');
 const randomWord = require('./randomWordGenerator');
-
+const getStateMachine = require('./finite-state-machine');
 
 module.exports = class Grammar {
     data;
@@ -41,5 +41,9 @@ module.exports = class Grammar {
 
     generateRandomWord() {
          return randomWord(this.data);
+    }
+
+    toStateMachine() {
+        return getStateMachine(this.data);
     }
 }
