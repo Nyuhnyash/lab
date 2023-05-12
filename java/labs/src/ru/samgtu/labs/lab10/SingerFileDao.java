@@ -1,4 +1,4 @@
-package ru.samgtu.labs.lab9.dao.file;
+package ru.samgtu.labs.lab10;
 
 import ru.samgtu.labs.lab9.model.*;
 import ru.samgtu.labs.lab9.dao.SingerDao;
